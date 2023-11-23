@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:splash_screen_test/res/message.dart';
 import 'package:splash_screen_test/res/values.dart';
 import 'package:splash_screen_test/screens/routeScreens/route_detail.dart';
 import 'package:splash_screen_test/screens/routeScreens/route_screen.dart';
@@ -18,6 +19,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: Nav.home,
+      translations: Messages(),
+      locale: const Locale('en', 'US'),
+      fallbackLocale: const Locale('en', 'US'),
       getPages: [
         GetPage(
           name: Nav.home,

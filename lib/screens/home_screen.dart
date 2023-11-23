@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:splash_screen_test/screens/localization_screen.dart';
 import 'package:splash_screen_test/screens/routeScreens/route_screen.dart';
 import 'package:splash_screen_test/widgets/ButtonInput.dart';
 
@@ -15,7 +16,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   void routeAction() {
     Get.to(
-      () => RouteScreen(),
+      () => const RouteScreen(),
       transition: Transition.rightToLeft,
       duration: const Duration(milliseconds: 500),
     );
@@ -23,7 +24,15 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void stateMangementAction() {
     Get.to(
-      () => StateManagementScreen(),
+      () => const StateManagementScreen(),
+      transition: Transition.rightToLeft,
+      duration: const Duration(milliseconds: 500),
+    );
+  }
+
+  void languageAction() {
+    Get.to(
+      () => const LocalizationScreen(),
       transition: Transition.rightToLeft,
       duration: const Duration(milliseconds: 500),
     );
@@ -32,6 +41,15 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.teal,
+        title: const Center(
+          child: Text(
+            'GetX Tutorials',
+            style: TextStyle(color: Colors.white, fontSize: 20),
+          ),
+        ),
+      ),
       body: SafeArea(
         child: Center(
           child: Column(
@@ -45,6 +63,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: stateMangementAction,
                 btnText: 'getX statemanagement',
               ),
+              ButtonInput(
+                  onPressed: languageAction, btnText: 'getX localization')
             ],
           ),
         ),

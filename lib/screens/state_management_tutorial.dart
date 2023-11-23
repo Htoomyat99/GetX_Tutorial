@@ -18,8 +18,8 @@ class _StateManagementScreenState extends State<StateManagementScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
-        iconTheme: IconThemeData(color: Colors.white),
-        title: Text(
+        iconTheme: const IconThemeData(color: Colors.white),
+        title: const Text(
           'GetX Statemanagement',
           style: TextStyle(color: Colors.white, fontSize: 20),
         ),
@@ -28,7 +28,7 @@ class _StateManagementScreenState extends State<StateManagementScreen> {
         child: Center(
             child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
@@ -36,7 +36,7 @@ class _StateManagementScreenState extends State<StateManagementScreen> {
               children: [
                 ButtonInput(
                     onPressed: controller.decreasementAction, btnText: '-'),
-                SizedBox(
+                const SizedBox(
                   width: 30,
                 ),
                 Obx(
@@ -44,7 +44,7 @@ class _StateManagementScreenState extends State<StateManagementScreen> {
                     controller.count.value.toString(),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 30,
                 ),
                 ButtonInput(
